@@ -58,7 +58,7 @@
                         </div>
                         <p class="text-gray-500">Mombasa, Nyali</p>
                         <p class="text-gray-500">3 bedroom</p>
-                        <p class="text-gray-500">Vacant</p>
+                        <p class="text-green-500 font-bold">Vacant</p>
                         <p class="text-gray-800 mt-2">Ksh.150/night</p>
                     </div>
                 </a>
@@ -66,18 +66,6 @@
         </div>
     </section>
      <!-- Footer -->
-     <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto flex justify-between">
-            <div>
-                <h4 class="font-bold">Airbnb</h4>
-                <p class="text-sm mt-2">© 2025 Airbnb, Inc.</p>
-            </div>
-            <div class="flex space-x-4">
-                <a href="#" class="hover:underline">Privacy</a>
-                <a href="#" class="hover:underline">Terms</a>
-                <a href="#" class="hover:underline">Sitemap</a>
-            </div>
-        </div>
-    </footer>
+     
 </x-layout>
 

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
     {{-- font --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -12,7 +13,7 @@
 
 
 
-    <title>Hello</title>
+    <title>bella</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     {{-- calender --}}
@@ -34,8 +35,8 @@
     <header class="sticky top-0 z-50 flex flex-wrap items-center justify-between px-6 py-4 shadow-xl bg-white">
         <!-- Logo -->
         <div class="flex items-center">
-            <a href="/" class="flex items-center">
-                <img src="{{ asset('assets/1.jpeg') }}" alt="Airbnb Logo" class="h-8">
+            <a href="/" class="flex items-center ">
+                <img src="{{ asset('assets/4.png') }}" alt="Airbnb Logo" class="h-32 w-32">
             </a>
         </div>
 
@@ -104,7 +105,7 @@
                         class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-20">
                         <p class="pl-1 font-bold">{{ Auth()->user()->username }}'s Account</p>
                         <hr class="w-full border-gray-300" />
-                        <a href="" class="block hover:bg-slate-100 pl-5 pr-8 py-2 mb-1">
+                        <a href="{{Route('dashboard')}}" class="block hover:bg-slate-100 pl-5 pr-8 py-2 mb-1">
                             <i class="fa-solid fa-gauge mr-1"></i>
                             Dashboard
                         </a>
@@ -229,9 +230,25 @@
     </script>
     --}}
     <!-- Featured Listings -->
+    
     <section class="px-6 py-12 bg-white">
         {{ $slot }}
     </section>
+    
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto flex justify-between">
+            <div>
+                <h4 class="font-bold">Airbnb</h4>
+                <p class="text-sm mt-2">© 2025 Airbnb, Inc.</p>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:underline">Privacy</a>
+                <a href="#" class="hover:underline">Terms</a>
+                <a href="#" class="hover:underline">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+   
 
 
 

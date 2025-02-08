@@ -11,7 +11,7 @@
             {{-- usrname --}}
             <div class="relative mb-2">
                 <input name="username" value="{{ old('username') }}" type="text" id="hs-floating-input-passowrd"
-                    class="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:outline-none focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600
+                class="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-blue-500 focus:ring-0 disabled:opacity-50 disabled:pointer-events-none
                 focus:pt-6
                 focus:pb-2
                 [&:not(:placeholder-shown)]:pt-6
@@ -20,15 +20,15 @@
                 autofill:pb-2 @error('username') border-red-500 ring-0 ring-red-500 @enderror"
                     placeholder="Username">
                 <label for="hs-floating-input-passowrd"
-                    class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
-                  peer-focus:scale-90
-                  peer-focus:translate-x-0.5
-                  peer-focus:-translate-y-1.5
-                  peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
-                  peer-[:not(:placeholder-shown)]:scale-90
-                  peer-[:not(:placeholder-shown)]:translate-x-0.5
-                  peer-[:not(:placeholder-shown)]:-translate-y-1.5
-                  peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Username</label>
+                class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                peer-focus:scale-90
+                peer-focus:translate-x-0.5
+                peer-focus:-translate-y-1.5
+                peer-focus:text-gray-500
+                peer-[:not(:placeholder-shown)]:scale-90
+                peer-[:not(:placeholder-shown)]:translate-x-0.5
+                peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                peer-[:not(:placeholder-shown)]:text-gray-500">Username</label>
                 @error('username')
                     <p class="text-xs text-red-500 mt-1"> {{ $message }} </p>
                 @enderror
@@ -36,7 +36,7 @@
             {{-- password --}}
             <div class="relative mb-2">
                 <input name="password" type="password" id="hs-floating-input-email"
-                    class="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:outline-none focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600
+                class="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-blue-500 focus:ring-0 disabled:opacity-50 disabled:pointer-events-none
                 focus:pt-6
                 focus:pb-2
                 [&:not(:placeholder-shown)]:pt-6
@@ -45,19 +45,20 @@
                 autofill:pb-2 @error('password') border-red-500 ring-0 ring-red-500 @enderror"
                     placeholder="xxxxxxxxxxx">
                 <label for="hs-floating-input-email"
-                    class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
-                  peer-focus:scale-90
-                  peer-focus:translate-x-0.5
-                  peer-focus:-translate-y-1.5
-                  peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
-                  peer-[:not(:placeholder-shown)]:scale-90
-                  peer-[:not(:placeholder-shown)]:translate-x-0.5
-                  peer-[:not(:placeholder-shown)]:-translate-y-1.5
-                  peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">password</label>
+                class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                peer-focus:scale-90
+                peer-focus:translate-x-0.5
+                peer-focus:-translate-y-1.5
+                peer-focus:text-gray-500
+                peer-[:not(:placeholder-shown)]:scale-90
+                peer-[:not(:placeholder-shown)]:translate-x-0.5
+                peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                peer-[:not(:placeholder-shown)]:text-gray-500">password</label>
                 @error('password')
                     <p class="text-xs text-red-500 mt-1"> {{ $message }} </p>
                 @enderror
             </div>
+            
             <button
                 class="flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-slate-400 disabled:cursor-wait">Login</button>
             <div class="mb-4 mt-2 ml-2">
@@ -68,21 +69,25 @@
                 Don't have an account?
                 <a href="{{ Route('register') }}" class="text-blue-500 hover:underline">Register</a>
             </p>
-            <!-- divider-->
-            <div class="relative flex items-center justify-center my-6">
-                <span class="absolute px-4 text-gray-500 bg-violet-50">OR</span>
-                <hr class="w-96 border-gray-300" />
-            </div>
+            
+        </form>
+        <!-- divider-->
+        <div class="relative flex items-center justify-center my-6">
+            <span class="absolute px-4 text-gray-500 bg-violet-50">OR</span>
+            <hr class="w-96 border-gray-300" />
+        </div>
+        <a href="{{ Route('google-auth')}}">
             <div class="mb-6">
                 <button class="w-full py-3 text-gray-700 border border-gray-300 rounded-lg ">
                     <i class="fa-brands fa-google"></i> Continue with google
                 </button>
             </div>
-            <div class="mb-6">
-                <button class="w-full py-3 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-100">
-                    <i class="fa-brands fa-facebook"></i> continue with facebook
-                </button>
-            </div>
-        </form>
+        </a>
+       
+        <div class="mb-6">
+            <button class="w-full py-3 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-100">
+                <i class="fa-brands fa-facebook"></i> continue with facebook
+            </button>
+        </div>
     </div>
 </x-layout>
